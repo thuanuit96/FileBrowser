@@ -35,6 +35,11 @@ extension FileListViewController: UITableViewDataSource, UITableViewDelegate {
         cell.selectionStyle = .blue
         let selectedFile = fileForIndexPath(indexPath)
         cell.textLabel?.text = selectedFile.displayName
+
+        if showSize {
+            cell.detailTextLabel?.text = convertToFileString(with: selectedFile.size)
+        }
+
         cell.imageView?.image = selectedFile.type.image()
         return cell
     }

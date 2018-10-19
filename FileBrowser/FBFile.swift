@@ -22,15 +22,23 @@ import Foundation
     public let filePath: URL
     // FBFileType
     public let type: FBFileType
-    
-    open func delete()
-    {
-        do
-        {
-            try FileManager.default.removeItem(at: self.filePath)
+
+    // Size
+    public var size: UInt64 {
+        get {
+            switch type {
+            case .Directory:
+                return (try? FileManager.default.allocatedSizeOfDirectory(at: filePath)) ?? 0
+            default:
+                return fileAttributes?.fileSize() ?? 0
+            }
         }
-        catch
-        {
+    }
+    
+    open func delete() {
+        do {
+            try FileManager.default.removeItem(at: self.filePath)
+        } catch {
             print("An error occured when trying to delete file:\(self.filePath) Error:\(error)")
         }
     }

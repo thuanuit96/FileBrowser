@@ -22,6 +22,7 @@ class FileListViewController: UIViewController {
     let previewManager = PreviewManager()
     var sections: [[FBFile]] = []
     var allowEditing: Bool = false
+    var showSize: Bool = true
 
     // Search controller
     var filteredFiles = [FBFile]()

@@ -33,6 +33,8 @@
 		349A12361C707E86005435C0 /* image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 349A122F1C707E86005435C0 /* image@2x.png */; };
 		349A12371C707E86005435C0 /* pdf@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 349A12301C707E86005435C0 /* pdf@2x.png */; };
 		349A12381C707E86005435C0 /* zip@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 349A12311C707E86005435C0 /* zip@2x.png */; };
+		E434E6BB2179857200E2BF62 /* SizeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E434E6B92179857200E2BF62 /* SizeConverter.swift */; };
+		E434E6BC2179857200E2BF62 /* AllocatedSizeOfDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E434E6BA2179857200E2BF62 /* AllocatedSizeOfDirectory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		349A122F1C707E86005435C0 /* image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "image@2x.png"; sourceTree = "<group>"; };
 		349A12301C707E86005435C0 /* pdf@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pdf@2x.png"; sourceTree = "<group>"; };
 		349A12311C707E86005435C0 /* zip@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zip@2x.png"; sourceTree = "<group>"; };
+		E434E6B92179857200E2BF62 /* SizeConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeConverter.swift; sourceTree = "<group>"; };
+		E434E6BA2179857200E2BF62 /* AllocatedSizeOfDirectory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllocatedSizeOfDirectory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 			children = (
 				3439AB671C6F203A0058AF04 /* FileParser.swift */,
 				349A12271C707B1A005435C0 /* FBFile.swift */,
+				E434E6BA2179857200E2BF62 /* AllocatedSizeOfDirectory.swift */,
+				E434E6B92179857200E2BF62 /* SizeConverter.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -320,7 +326,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				343C447A1C73CFC400D874FB /* WebviewPreviewViewContoller.swift in Sources */,
+				E434E6BB2179857200E2BF62 /* SizeConverter.swift in Sources */,
 				3439AB701C6FF68C0058AF04 /* FileBrowser.swift in Sources */,
+				E434E6BC2179857200E2BF62 /* AllocatedSizeOfDirectory.swift in Sources */,
 				349A12261C707317005435C0 /* FileListTableView.swift in Sources */,
 				343C44661C73CD3200D874FB /* PreviewManager.swift in Sources */,
 				3439AB681C6F203A0058AF04 /* FileParser.swift in Sources */,
