@@ -15,7 +15,7 @@ class MainViewController: UIViewController {
     
     @IBAction func showFileBrowser(sender: AnyObject) {
         let documentsUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0] as URL
-        let fileBrowser = FileBrowser.init(initialPath: documentsUrl,
+        let fileBrowser = FileBrowser(initialPath: documentsUrl,
                                            allowEditing: true,
                                            showCancelButton: true,
                                            showSize: true)

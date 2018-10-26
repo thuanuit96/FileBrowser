@@ -7,7 +7,7 @@
 
 import Foundation
 
-func convertToFileString(with size: UInt64) -> String {
+func convertSizeToReadableString(with size: UInt64) -> String {
     var convertedValue: Double = Double(size)
     var multiplyFactor = 0
     let tokens = ["bytes", "KB", "MB", "GB", "TB", "PB",  "EB",  "ZB", "YB"]

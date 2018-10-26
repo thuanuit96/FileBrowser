@@ -37,7 +37,9 @@ extension FileListViewController: UITableViewDataSource, UITableViewDelegate {
         cell.textLabel?.text = selectedFile.displayName
 
         if showSize {
-            cell.detailTextLabel?.text = convertToFileString(with: selectedFile.size)
+            selectedFile.size() { size in
+                cell.detailTextLabel?.text = convertSizeToReadableString(with: size)
+            }
         }
 
         cell.imageView?.image = selectedFile.type.image()

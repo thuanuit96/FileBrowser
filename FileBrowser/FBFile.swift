@@ -24,13 +24,18 @@ import Foundation
     public let type: FBFileType
 
     // Size
-    public var size: UInt64 {
-        get {
-            switch type {
+    public func size(callingQueue: DispatchQueue = DispatchQueue.main, completionHandler: @escaping (UInt64) -> Void) {
+        let queue = DispatchQueue(label: "Size calculation queue")
+        queue.async {
+            var size: UInt64 = 0
+            switch self.type {
             case .Directory:
-                return (try? FileManager.default.allocatedSizeOfDirectory(at: filePath)) ?? 0
+                size = (try? FileManager.default.allocatedSizeOfDirectory(at: self.filePath)) ?? 0
             default:
-                return fileAttributes?.fileSize() ?? 0
+                size = self.fileAttributes?.fileSize() ?? 0
+            }
+            callingQueue.async {
+                completionHandler(size)
             }
         }
     }
