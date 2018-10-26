@@ -14,7 +14,12 @@ class MainViewController: UIViewController {
     // MARK: - FileBrowser
     
     @IBAction func showFileBrowser(sender: AnyObject) {
-        let fileBrowser = FileBrowser()
+        let documentsUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0] as URL
+        let fileBrowser = FileBrowser(initialPath: documentsUrl,
+                                           allowEditing: true,
+                                           showCancelButton: true,
+                                           showSize: true)
+
         present(fileBrowser, animated: true, completion: nil)
     }
 }

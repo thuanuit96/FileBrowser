@@ -22,6 +22,7 @@ class FileListViewController: UIViewController {
     let previewManager = PreviewManager()
     var sections: [[FBFile]] = []
     var allowEditing: Bool = false
+    var showSize: Bool = false
 
     // Search controller
     var filteredFiles = [FBFile]()
@@ -39,7 +40,7 @@ class FileListViewController: UIViewController {
         self.init(initialPath: initialPath, showCancelButton: true, allowEditing: allowEditing)
     }
     
-    convenience init (initialPath: URL, showCancelButton: Bool, allowEditing: Bool = false) {
+    convenience init (initialPath: URL, showCancelButton: Bool, allowEditing: Bool = false, showSize: Bool = false) {
         self.init(nibName: "FileBrowser", bundle: Bundle(for: FileListViewController.self))
         self.edgesForExtendedLayout = UIRectEdge()
         
@@ -47,6 +48,7 @@ class FileListViewController: UIViewController {
         self.initialPath = initialPath
         self.title = initialPath.lastPathComponent
         self.allowEditing = allowEditing
+        self.showSize = showSize
 
         // Set search controller delegates
         searchController.searchResultsUpdater = self

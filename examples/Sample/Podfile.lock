@@ -1,5 +1,5 @@
 PODS:
-  - FileBrowser (1.0.1)
+  - FileBrowser (1.0.2)
 
 DEPENDENCIES:
   - FileBrowser (from `../..`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../.."
 
 SPEC CHECKSUMS:
-  FileBrowser: 2f8ad6612dc38c244129d6a286053916165ab392
+  FileBrowser: ccaf0e41063a078ce6fa1373e9169a42b077bed0
 
 PODFILE CHECKSUM: aaefb425330b5b14baa22345634307ee30f2826a
 

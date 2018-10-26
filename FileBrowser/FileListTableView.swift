@@ -35,6 +35,13 @@ extension FileListViewController: UITableViewDataSource, UITableViewDelegate {
         cell.selectionStyle = .blue
         let selectedFile = fileForIndexPath(indexPath)
         cell.textLabel?.text = selectedFile.displayName
+
+        if showSize {
+            selectedFile.size() { size in
+                cell.detailTextLabel?.text = convertSizeToReadableString(with: size)
+            }
+        }
+
         cell.imageView?.image = selectedFile.type.image()
         return cell
     }
@@ -43,7 +50,10 @@ extension FileListViewController: UITableViewDataSource, UITableViewDelegate {
         let selectedFile = fileForIndexPath(indexPath)
         searchController.isActive = false
         if selectedFile.isDirectory {
-            let fileListViewController = FileListViewController(initialPath: selectedFile.filePath, allowEditing: allowEditing)
+            let fileListViewController = FileListViewController(initialPath: selectedFile.filePath,
+                                                                showCancelButton: true,
+                                                                allowEditing: allowEditing,
+                                                                showSize: showSize)
             fileListViewController.didSelectFile = didSelectFile
             self.navigationController?.pushViewController(fileListViewController, animated: true)
         }
