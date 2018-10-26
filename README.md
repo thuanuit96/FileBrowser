@@ -48,6 +48,14 @@ You can also allow editing/deleting files.
 let fileBrowser = FileBrowser(initialPath: customPath, allowEditing: true)
 ```
 
+You can show/hide files and directories sizes (true by default).
+```swift
+let fileBrowser = FileBrowser(initialPath: documentsUrl,
+                                   allowEditing: true,
+                                   showCancelButton: true,
+                                   showSize: true)
+```
+
 Use the didSelectFile closure to change FileBrowser's behaviour when a file is selected.
 ```swift
 fileBrowser.didSelectFile = { (file: FBFile) -> Void in
