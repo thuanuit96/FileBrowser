@@ -35,6 +35,13 @@ open class FileBrowser: UINavigationController {
             fileList?.didSelectFile = didSelectFile
         }
     }
+    
+    /// Closure to be executed when close button is tapped
+    open var didClose: (() -> ())? {
+        didSet {
+            fileList?.didClose = didClose
+        }
+    }
 
     public convenience init() {
         let parser = FileParser.sharedInstance
