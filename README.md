@@ -70,6 +70,20 @@ fileBrowser.excludesFileExtensions = ["zip"]
 fileBrowser.excludesFilepaths = [secretFile]
 ```
 
+### Setting up with SPM
+```ruby
+let package = Package(
+    …
+    dependencies: [
+        .package(url: "https://github.com/Nuglif/FileBrowser.git", from: "1.3.0"),
+    ],
+    targets: [
+        .target(name: "YourTarget", dependencies: ["FileBrowser", …])
+        …
+    ]
+)
+```
+
 ### Setting up with [CocoaPods](http://cocoapods.org/?q=FileBrowser)
 ```ruby
 pod 'FileBrowser', git: 'https://github.com/Nuglif/FileBrowser'
