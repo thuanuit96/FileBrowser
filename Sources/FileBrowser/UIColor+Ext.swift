@@ -6,8 +6,7 @@
 //  Copyright © 2019 Roy Marmelstein. All rights reserved.
 //
 
-import Foundation
-
+import UIKit
 
 extension UIColor {
     class func fileBrowserBackground() -> UIColor {
