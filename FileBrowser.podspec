@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "FileBrowser"
-  s.version          = "1.2"
+  s.version          = "1.3.0"
   s.summary          = "Powerful iOS file browser in Swift."
   s.description      = <<-DESC
                       A Swift file browser for iOS. Supports QuickLook, search and 3D touch.
@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
 
   s.source_files = "Sources/**/*.{swift}"
   s.resources = "Sources/FileBrowser/Resources/*.*"
-  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '5.0' }
+  s.swift_version = '5.0'
 
   s.frameworks = 'QuickLook', 'WebKit'
 
