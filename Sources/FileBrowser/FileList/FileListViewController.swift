@@ -51,7 +51,7 @@ class FileListViewController: UIViewController {
         
         // Set initial path
         self.initialPath = initialPath
-        self.title = initialPath.lastPathComponent
+        self.title = "Files"
         self.allowEditing = allowEditing
         self.showSize = showSize
 
@@ -62,7 +62,7 @@ class FileListViewController: UIViewController {
         
         if showCancelButton {
             // Add dismiss button
-            let dismissButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(FileListViewController.dismiss(button:)))
+            let dismissButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(FileListViewController.dismiss(button:)))
             self.navigationItem.rightBarButtonItem = dismissButton
         }
     }
@@ -92,8 +92,11 @@ class FileListViewController: UIViewController {
         // Set search bar
         tableView.tableHeaderView = searchController.searchBar
         
+        
         // Register for 3D touch
         self.registerFor3DTouch()
+        
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -103,7 +106,7 @@ class FileListViewController: UIViewController {
         self.tableView.contentOffset = CGPoint(x: 0, y: searchController.searchBar.frame.size.height)
         
         // Make sure navigation bar is visible
-        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     @objc func dismiss(button: UIBarButtonItem = UIBarButtonItem()) {
@@ -142,6 +145,12 @@ class FileListViewController: UIViewController {
         })
         tableView.reloadData()
     }
+    
+    func reloadData (){
+        prepareData()
+        tableView.reloadData()
+    }
 
 }
+
 

@@ -43,6 +43,10 @@ open class FileBrowser: UINavigationController {
         }
     }
 
+    open func reloadData () {
+        fileList?.reloadData()
+    }
+    
     public convenience init() {
         let parser = FileParser.sharedInstance
         let path = parser.documentsURL()
@@ -70,6 +74,9 @@ open class FileBrowser: UINavigationController {
 
         self.init(rootViewController: fileListViewController)
         self.view.backgroundColor = UIColor.fileBrowserBackground()
+        self.setNavigationBarHidden(true, animated: true)
+        self.navigationBar.isHidden = true
+        self.isNavigationBarHidden = true
         self.fileList = fileListViewController
     }
 }
